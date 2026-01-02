@@ -43,31 +43,52 @@
             const now = new Date().toLocaleString('id-ID');
 
             const commandParts = [
-                "COMMANDS.HW_INIT",                              // Reset printer
-                "COMMANDS.TEXT_FORMAT.TXT_ALIGN_CT",            // Center
-                "COMMANDS.TEXT_FORMAT.TXT_2HEIGHT",             // Double height
-                "COMMANDS.TEXT_FORMAT.TXT_BOLD_ON",             // Bold ON
-                wrapCommandText("TOKO SAYA\\n"),                 // Nama toko
-                "COMMANDS.TEXT_FORMAT.TXT_BOLD_OFF",
-                "COMMANDS.TEXT_FORMAT.TXT_NORMAL",
-                wrapCommandText("Jl. Contoh No. 123\\n"),
-                wrapCommandText("Telp: 021-12345678\\n\\n"),
-                "COMMANDS.HR_58MM",                              // Garis
-                "COMMANDS.TEXT_FORMAT.TXT_ALIGN_LT",            // Left
-                wrapCommandText("Tanggal: " + now + "\\n\\n"),
-                wrapCommandText("Item 1          Rp 10.000\\n"),
-                wrapCommandText("Item 2          Rp 15.000\\n"),
-                wrapCommandText("Item 3          Rp 20.000\\n"),
-                "COMMANDS.HR_58MM",
-                "COMMANDS.TEXT_FORMAT.TXT_BOLD_ON",
-                wrapCommandText("TOTAL           Rp 45.000\\n"),
-                "COMMANDS.TEXT_FORMAT.TXT_BOLD_OFF",
-                wrapCommandText("\\n"),
+                "COMMANDS.HW_INIT",
+
                 "COMMANDS.TEXT_FORMAT.TXT_ALIGN_CT",
-                wrapCommandText("Terima Kasih\\n"),
-                wrapCommandText("Selamat Berbelanja Kembali\\n\\n\\n"),
-                "COMMANDS.PAPER_FULL_CUT"                        // Cut paper
+                "COMMANDS.TEXT_FORMAT.TXT_BOLD_ON",
+                wrapCommandText("BoostechLab Coffee\n"),
+                "COMMANDS.TEXT_FORMAT.TXT_BOLD_OFF",
+                wrapCommandText("Web2 POS Thermal\n"),
+                wrapCommandText("\n"),
+
+                "COMMANDS.TEXT_FORMAT.TXT_ALIGN_LT",
+                wrapCommandText("Kasir : Kasir Mia\n"),
+                wrapCommandText("Invoice: INV-001\n"),
+                wrapCommandText("2/1/2026, 14.20.27\n"),
+                wrapCommandText("Jl. Pos Thermal No. 12\n"),
+                wrapCommandText("Jakarta\n"),
+
+                wrapCommandText("--------------------------------\n"),
+
+                wrapCommandText("Signature Espresso\n"),
+                wrapCommandText("2 x Rp 25.000,00    Rp 50.000,00\n"),
+                wrapCommandText("Butter Croissant\n"),
+                wrapCommandText("1 x Rp 21.000,00    Rp 21.000,00\n"),
+                wrapCommandText("Nitro Cold Brew\n"),
+                wrapCommandText("1 x Rp 36.000,00    Rp 36.000,00\n"),
+
+                wrapCommandText("--------------------------------\n"),
+                wrapCommandText("Subtotal            Rp 107.000,00\n"),
+                wrapCommandText("Diskon (10%)        -Rp 10.700,00\n"),
+                wrapCommandText("Pajak (11%)         Rp 10.593,00\n"),
+
+                "COMMANDS.TEXT_FORMAT.TXT_BOLD_ON",
+                wrapCommandText("Grand Total         Rp 106.893,00\n"),
+                "COMMANDS.TEXT_FORMAT.TXT_BOLD_OFF",
+
+                wrapCommandText("--------------------------------\n"),
+                wrapCommandText("Pembayaran : Debit Card\n"),
+                wrapCommandText("\n"),
+
+                "COMMANDS.TEXT_FORMAT.TXT_ALIGN_CT",
+                wrapCommandText("Terima kasih telah berbelanja.\n"),
+                wrapCommandText("Follow IG @boostechlab\n"),
+                wrapCommandText("\n\n\n"),
+
+                "COMMANDS.PAPER_FULL_CUT"
             ];
+
 
             sendToIframe(commandParts);
         });
